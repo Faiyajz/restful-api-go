@@ -1,20 +1,20 @@
 package main
 
-import (
+import(
 	"fmt"
 	"log"
 	"net/http"
 )
 
-func homePage(w http.ResponseWriter, r *http.Request) {
+func homePage(w http.ResponseWriter, r *http.Request){
 	fmt.Fprint(w, "Homepage Endpoint Hit")
 }
 
-func handleRequests() {
-	http.HandleFunc("/", homePage)
+func handleRequests(){
+	http.HandleFunc("/",homePage)
 	log.Fatal(http.ListenAndServe(":8081", nil))
 }
 
-func main() {
+func main(){
 	handleRequests()
 }
